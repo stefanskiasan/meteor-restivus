@@ -1,12 +1,12 @@
 Package.describe({
   name: 'stefanskia:restivus',
   summary: 'Create authenticated REST APIs in Meteor via HTTP/HTTPS. Setup CRUD endpoints for Collections.',
-  version: '1.1.1',
+  version: '1.1.2',
   git: 'https://github.com/stefanskiasan/meteor-restivus'
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('1.10');
+  api.versionsFrom('1.12');
 
   // Meteor dependencies
   api.use('ecmascript');
@@ -22,6 +22,7 @@ Package.onUse(function (api) {
     'lib/restivus.js'
   ], 'server');
   api.mainModule('index.js', 'server');
+  api.export('Restivus', 'server')
 });
 
 Package.onTest(function (api) {
@@ -30,12 +31,8 @@ Package.onTest(function (api) {
   api.use('mongo');
   api.use('http');
   api.use('underscore');
-  api.use('accounts-base');
-  api.use('accounts-password');
   api.use('practicalmeteor:munit');
   api.use('test-helpers');
-  api.use('vatfree:restivus');
-  api.use('alanning:roles');
 
   api.addFiles([
       'test/api_tests.js',
