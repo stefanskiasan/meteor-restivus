@@ -12,7 +12,7 @@ Package.onUse(function (api) {
   api.use('ecmascript');
   api.use('check');
   api.use('underscore');
-  api.use('accounts-password@1.6.2');
+  api.use('accounts-password@2.0.0');
   api.use('simple:json-routes@2.1.0');
   api.use('alanning:roles@1.2.19', 'server', {weak: true});
 
